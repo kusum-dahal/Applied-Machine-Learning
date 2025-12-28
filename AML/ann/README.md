@@ -41,6 +41,7 @@ For a single layer, the output $Z$ and activation $A$ are calculated as:
 
 $$Z = W \cdot X + b$$
 $$A = \sigma(Z) = \frac{1}{1 + e^{-Z}}$$
+
 (Where $\sigma$ is the Sigmoid activation function)
 
 ### 2. Loss Function (MSE)
@@ -76,7 +77,7 @@ Ensure you have Python installed along with the required libraries:
 ## Results
 After training for 10,000 epochs, the model achieves convergence.
 1. Final Loss: $< 0.04$
-2. Test Set Accuracy: $~98\%$
+2. Test Set Accuracy: $~98 \% $
 
 ## Sample Prediction Output
 
