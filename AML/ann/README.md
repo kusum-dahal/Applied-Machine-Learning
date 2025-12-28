@@ -38,6 +38,7 @@ This implementation relies on the following core equations:
 ### 1. Forward Propagation
 
 For a single layer, the output $Z$ and activation $A$ are calculated as:
+
 $$Z = W \cdot X + b$$
 $$A = \sigma(Z) = \frac{1}{1 + e^{-Z}}$$
 (Where $\sigma$ is the Sigmoid activation function)
@@ -45,11 +46,13 @@ $$A = \sigma(Z) = \frac{1}{1 + e^{-Z}}$$
 ### 2. Loss Function (MSE)
 
 We minimize the Mean Squared Error to measure performance:
+
 $$Loss = \frac{1}{n} \sum (y_{true} - y_{pred})^2$$
 
 ### 3. Backpropagation (Chain Rule)
 
 Weights are updated by calculating the gradient of the Loss with respect to Weights ($W$):
+
 $$\frac{\partial Loss}{\partial W} = \frac{\partial Loss}{\partial A} \cdot \frac{\partial A}{\partial Z} \cdot \frac{\partial Z}{\partial W}$$
 
 ## Installation & Usage
