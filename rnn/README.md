@@ -30,17 +30,21 @@ The core of the RNN is the hidden state update, which serves as the network's sh
 
 ### Forward Pass (Recurrence)
 At every time step $t$, the new hidden state $h_t$ is calculated using the current input $x_t$ and the previous hidden state $h_{t-1}$:
+
 $$h_t = \tanh(W_{xh} \cdot x_t + W_{hh} \cdot h_{t-1} + b_h)$$
 
 The output (logits) $y_t$ is then computed from this hidden state:
+
 $$y_t = W_{hy} \cdot h_t + b_y$$
 
 ### Probability Distribution (Softmax)
 To predict the next word, we apply the Softmax function with temperature scaling ($T$):
+
 $$P(y_t) = \frac{e^{y_t / T}}{\sum e^{y_j / T}}$$
 
 ###  Loss Function
 The network minimizes the Cross-Entropy Loss between the predicted probability distribution and the actual next word:
+
 $$L = - \sum y_{true} \cdot \ln(y_{pred})$$
 
 ## Installation & Usage

@@ -34,14 +34,17 @@ The implementation relies on the chain rule to propagate error through the netwo
 
 ### Convolutional Gradients
 For a filter $F$, the gradient is computed by convolving the input slice $X$ with the upstream gradient $\frac{\partial L}{\partial Y}$:
+
 $$\frac{\partial L}{\partial F_{m,n}} = \sum_{i,j} X_{i+m, j+n} \cdot \frac{\partial L}{\partial Y_{i,j}}$$
 
 ### Max Pooling Backpropagation
 Max pooling is non-differentiable in the traditional sense. The gradient is sparse and is routed exclusively to the index of the maximum value within the receptive field:
+
 $$\frac{\partial L}{\partial x_{i,j}} = \begin{cases} \frac{\partial L}{\partial y} & \text{if } x_{i,j} = \max(window) \\ 0 & \text{otherwise} \end{cases}$$
 
 ###Optimization (Cross-Entropy & Softmax)
 The network minimizes Categorical Cross-Entropy. For the final layer, the gradient of the loss $L$ with respect to the logits $z$ simplifies to the difference between the prediction vector $\hat{y}$ and the one-hot encoded label $y$:
+
 $$\frac{\partial L}{\partial z} = \hat{y} - y$$
 
 ## Installation & Usage
